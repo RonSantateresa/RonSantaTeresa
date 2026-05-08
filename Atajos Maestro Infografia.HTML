@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atajos Esenciales - Santa Teresa 1796</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        st: {
+                            blue: '#102B4E',
+                            gold: '#C5A059',
+                            mahogany: '#6B240C',
+                            parchment: '#F3EBE1',
+                            dark: '#1A0B05'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-soft': 'pulseSoft 2s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #1A0B05;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        kbd {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F3EBE1 100%);
+            border: 1px solid #C5A059;
+            border-bottom: 2px solid #a38243;
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-family: ui-monospace, monospace;
+            font-weight: 700;
+            font-size: 0.7rem;
+            color: #102B4E;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .creative-card {
+            position: relative;
+            background: rgba(243, 235, 225, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+            box-shadow: 0 6px 24px 0 rgba(31, 38, 135, 0.07);
+            opacity: 0; /* Para la animación de entrada */
+        }
+        
+        .creative-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #102B4E, #C5A059, #6B240C);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .creative-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(16, 43, 78, 0.15);
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(197, 160, 89, 0.8);
+        }
+        
+        .creative-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-watermark {
+            position: absolute;
+            bottom: -1rem;
+            right: -1rem;
+            opacity: 0.04;
+            width: 120px;
+            height: 120px;
+            pointer-events: none;
+            transform: rotate(-15deg);
+            transition: all 0.6s ease;
+            color: #102B4E;
+            z-index: -1;
+        }
+
+        .shortcut-row {
+            transition: all 0.3s ease;
+            padding: 0.6rem 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.15rem;
+            border: 1px solid transparent;
+        }
+        
+        .shortcut-row:hover {
+            background: linear-gradient(to right, rgba(197, 160, 89, 0.1), transparent);
+            border-left: 3px solid #102B4E;
+            transform: translateX(4px);
+        }
+
+        /* Retrasos para la animación staggered */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+
+<body class="min-h-screen bg-cover bg-center bg-fixed relative flex items-center justify-center p-3 md:p-6" 
+      style="background-image: url('https://github.com/RonSantateresa/Google-Keep/blob/main/Captura%20de%20pantalla%202026-05-07%20085416.png?raw=true');">
+    
+    <div class="absolute inset-0 bg-st-dark/30 backdrop-blur-[2px]"></div>
+
+    <div class="w-full max-w-4xl relative z-10 bg-st-parchment/60 backdrop-blur-2xl shadow-2xl rounded-2xl overflow-hidden border border-st-gold/40 animate-fade-in-up">
+        
+        <header class="p-6 md:p-10 text-center relative border-b border-st-gold/30 bg-gradient-to-b from-white/50 to-transparent">
+            <div class="relative z-10 flex flex-col items-center">
+                <div class="p-2 border-2 border-st-gold rounded-full bg-st-blue shadow-xl mb-3 transform hover:rotate-12 transition-transform duration-500">
+                    <i data-lucide="award" class="w-6 h-6 text-st-gold"></i>
+                </div>
+                <h1 class="serif text-st-blue text-3xl md:text-4xl font-black mb-1 tracking-tight drop-shadow-sm">Productividad de Maestros</h1>
+                <p class="text-st-mahogany font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">
+                    Inspirado en la excelencia de Ron Santa Teresa
+                </p>
+            </div>
+        </header>
+
+        <div class="p-4 md:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                
+                <!-- Sección 1 -->
+                <div class="creative-card p-5 md:p-6 animate-fade-in-up delay-1">
+                    <i data-lucide="folder-search" class="card-watermark"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="icon-wrapper p-1.5 bg-st-blue/10 rounded-lg">
+                            <i data-lucide="folder-search" class="w-5 h-5 text-st-blue"></i>
+                        </div>
+                        <h2 class="font-bold text-lg serif text-st-blue">Archivos y Sistema</h2>
+                    </div>
+                    <ul class="space-y-1">
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-bold text-st-mahogany flex items-center gap-2">
+                                Búsqueda Rápida
+                                <span class="bg-st-blue text-st-gold px-1.5 py-0.5 rounded-full text-[9px] uppercase font-bold tracking-widest shadow-sm animate-pulse-soft">Top</span>
+                            </span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>F</kbd></div>
+                        </li>
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Explorador de Archivos</span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>E</kbd></div>
+                        </li>
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Mostrar Escritorio</span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>D</kbd></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sección 2 -->
+                <div class="creative-card p-5 md:p-6 animate-fade-in-up delay-2">
+                    <i data-lucide="file-text" class="card-watermark"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="icon-wrapper p-1.5 bg-st-blue/10 rounded-lg">
+                            <i data-lucide="file-text" class="w-5 h-5 text-st-blue"></i>
+                        </div>
+                        <h2 class="font-bold text-lg serif text-st-blue">Edición de Documentos</h2>
+                    </div>
+                    <ul class="space-y-1">
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark flex items-center gap-2">
+                                Historial de Portapapeles 
+                                <span class="bg-st-blue text-st-gold px-1.5 py-0.5 rounded-full text-[9px] uppercase font-bold tracking-widest shadow-sm animate-pulse-soft">Top</span>
+                            </span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>V</kbd></div>
+                        </li>
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Pegar sin formato original</span>
+                            <div class="flex gap-1"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd></div>
+                        </li>
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Guardar documento (Word/Excel)</span>
+                            <div class="flex gap-1"><kbd>Ctrl</kbd>+<kbd>G</kbd></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sección 3 -->
+                <div class="creative-card p-5 md:p-6 animate-fade-in-up delay-3">
+                    <i data-lucide="monitor" class="card-watermark"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="icon-wrapper p-1.5 bg-st-blue/10 rounded-lg">
+                            <i data-lucide="monitor" class="w-5 h-5 text-st-blue"></i>
+                        </div>
+                        <h2 class="font-bold text-lg serif text-st-blue">Atajos de Windows</h2>
+                    </div>
+                    <ul class="space-y-1">
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Vista de Tareas</span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>Tab</kbd></div>
+                        </li>
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Dividir Pantalla</span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>← / →</kbd></div>
+                        </li>
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Panel de Emojis</span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>.</kbd></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sección 4 -->
+                <div class="creative-card p-5 md:p-6 animate-fade-in-up delay-4">
+                    <i data-lucide="mail-check" class="card-watermark"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="icon-wrapper p-1.5 bg-st-blue/10 rounded-lg">
+                            <i data-lucide="mail-check" class="w-5 h-5 text-st-blue"></i>
+                        </div>
+                        <h2 class="font-bold text-lg serif text-st-blue">Correos y Seguridad</h2>
+                    </div>
+                    <ul class="space-y-1">
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-bold text-st-mahogany flex items-center gap-2">
+                                Bloquear la Laptop
+                                <span class="bg-st-blue text-st-gold px-1.5 py-0.5 rounded-full text-[9px] uppercase font-bold tracking-widest shadow-sm animate-pulse-soft">Top</span>
+                            </span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>L</kbd></div>
+                        </li>
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Captura de pantalla (Recorte)</span>
+                            <div class="flex gap-1"><kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></div>
+                        </li>
+                        <li class="shortcut-row flex justify-between items-center">
+                            <span class="text-xs font-medium text-st-dark">Admin. de Tareas</span>
+                            <div class="flex gap-1"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Esc</kbd></div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        
+        <footer class="bg-st-blue p-4 text-center flex flex-col items-center gap-1 border-t border-st-gold/40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+            <p class="text-st-parchment/80 text-[11px] italic font-medium">"Hacemos Ron, Jugamos Rugby"</p>
+            <p class="text-st-gold text-[10px] font-bold uppercase tracking-[0.25em] mt-0.5">#SacaElPecho</p>
+        </footer>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
